@@ -35,7 +35,8 @@ if conversion_type == "Length":
     with col2:
         to_unit = st.selectbox("To", units.keys())
 
-    value = st.number_input("Enter value:", value=0.0, step=0.1)
+    value = st.number_input("Enter length:", value=0.0, min_value=0.0, step=0.1)
+
 
     if st.button("Convert"):
         result = value * units[from_unit] / units[to_unit]
@@ -60,7 +61,8 @@ elif conversion_type == "Weight":
     with col2:
         to_unit = st.selectbox("To", units.keys())
 
-    value = st.number_input("Enter weight:", min_value=0.0, step=0.1)
+    value = st.number_input("Enter weight:", value=0.0, min_value=0.0, step=0.1)
+
 
     if st.button("Convert"):
         result = value * units[from_unit] / units[to_unit]
@@ -78,7 +80,7 @@ elif conversion_type == "Temperature":
     with col2:
         to_unit = st.selectbox("To", ["Celsius", "Fahrenheit", "Kelvin"])
 
-    value = st.number_input("Enter temperature:", min_value=0.0, step=0.1)
+    value = st.number_input("Enter temperature:", value=0.0, step=0.1)
 
     def convert_temp(v, f, t):
         if f == t:
