@@ -39,7 +39,7 @@ if conversion_type == "Length":
 
     if st.button("Convert"):
         result = value * units[from_unit] / units[to_unit]
-        st.success(f"{value} {from_unit} = {result:.4f} {to_unit}")
+        st.success(f"{value} {from_unit} = {result:.2f} {to_unit}")
         st.caption(f"Formula: {value} × ({units[from_unit]} / {units[to_unit]})")
 
 
@@ -64,7 +64,7 @@ elif conversion_type == "Weight":
 
     if st.button("Convert"):
         result = value * units[from_unit] / units[to_unit]
-        st.success(f"{value} {from_unit} = {result:.4f} {to_unit}")
+        st.success(f"{value} {from_unit} = {result:.2f} {to_unit}")
         st.caption(f"Formula: {value} × ({units[from_unit]} / {units[to_unit]})")
 
 
