@@ -94,7 +94,7 @@ elif conversion_type == "Temperature":
         result = convert_temp(value, from_unit, to_unit)
         st.success(f"{value} {from_unit} = {result:.2f} {to_unit}")
 
-    # Show formula used
+    #Formula
         if from_unit == to_unit:
             st.caption("Formula: No conversion needed.")
         elif from_unit == "Celsius" and to_unit == "Fahrenheit":
