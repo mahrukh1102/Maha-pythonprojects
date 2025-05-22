@@ -3,11 +3,92 @@ import streamlit as st
 #page setting
 st.set_page_config(page_title="Unit Converter", layout="centered")
 
-# Title
-st.title("Unit Converter")
-st.write("#### Convert between Length, Weight and Temperature")
+# Custom CSS for styling 
+st.markdown(
+    """
+    <style>
+    /* Center page content and add padding */
+    .main {
+        padding: 2rem 3rem;
+        max-width: 700px;
+        margin: auto;
+    }
 
-st.divider()
+    /* Title style: red */
+    .title {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #e74c3c;  /* red */
+        font-weight: 700;
+        font-size: 3rem;
+        margin-bottom: 0.1rem;
+    }
+
+    /* Subtitle style */
+    .subtitle {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #34495e;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style for selectboxes */
+    div[data-baseweb="select"] > div {
+        border-radius: 8px !important;
+        border: 1.5px solid #e74c3c !important;  /* red */
+    }
+
+    /* Number input styling */
+    input[type="number"] {
+        border-radius: 8px !important;
+        border: 1.5px solid #e74c3c !important; /* red */
+        padding: 8px;
+    }
+
+    /* Convert button style */
+    button[kind="primary"] {
+        background-color: #e74c3c !important;  /* red */
+        color: white !important;
+        font-weight: 600 !important;
+        border-radius: 8px !important;
+        padding: 0.5rem 1.2rem !important;
+        transition: background-color 0.3s ease;
+    }
+    button[kind="primary"]:hover {
+        background-color: #c0392b !important; /* darker red on hover */
+    }
+
+    /* Red divider line */
+    hr {
+        border: none;
+        border-top: 2px solid #e74c3c !important;
+        margin: 1.5rem 0;
+    }
+
+    /* Success message style */
+    .stSuccess {
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: #27ae60 !important;
+        margin-top: 1rem;
+    }
+
+    /* Caption style */
+    .stCaption {
+        font-style: italic;
+        color: #7f8c8d !important;
+        margin-top: 0.3rem;
+    }
+    </style>
+    """, unsafe_allow_html=True
+)
+
+# Title 
+st.markdown('<h1 style="color:#e74c3c;">Unit Converter</h1>', unsafe_allow_html=True)
+
+st.markdown('<h4 class="subtitle">Convert between Length, Weight and Temperature</h4>', unsafe_allow_html=True)
+
+# divider 
+st.markdown("<hr>", unsafe_allow_html=True)
 
 #conversion type choose
 conversion_type = st.selectbox("Choose conversion category:", ["Length", "Temperature", "Weight"])
@@ -111,3 +192,5 @@ elif conversion_type == "Temperature":
             st.caption("Formula: ((°F - 32) × 5/9) + 273.15")
         elif from_unit == "Kelvin" and to_unit == "Fahrenheit":
             st.caption("Formula: ((K - 273.15) × 9/5) + 32")
+
+
