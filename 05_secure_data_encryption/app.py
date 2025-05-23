@@ -63,7 +63,7 @@ if choice == "Home":
 
 elif choice == "Store Data":
     st.subheader("📥 Store Data")
-    label = st.text_input("Label for your data (e.g., 'Note1'):")
+    label = st.text_input("Label for your data:")
     plain_text = st.text_area("Enter your data:")
     passkey = st.text_input("Set a Passkey:", type="password")
 
